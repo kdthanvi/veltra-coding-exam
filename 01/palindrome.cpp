@@ -13,9 +13,9 @@ bool palindrome(string str){
         
     while (left <= right){
 
-        if (str[left] < 'a' || str[left] > 'z')
+        if ((str[left] < 'a' || str[left] > 'z') && (str[left] < '0' || str[left] > '9'))
             left++;
-        else if(str[right] < 'a' || str[right] > 'z')
+        else if((str[right] < 'a' || str[right] > 'z') && (str[right] < '0' || str[right] > '9'))
             right--;
         else if (str[left] != str[right])
             return false;
