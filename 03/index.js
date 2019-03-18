@@ -2,9 +2,10 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const urlvalidator = require('validator');
 const shash = require('shorthash');
+const configs = require('./config');
 
 const redis = require('redis'),
-            client = redis.createClient('6379', 'localhost');
+            client = redis.createClient(configs.redis_port, configs.redis_url);
             client.on("error", (err)=>{
                 console.log("[Error] " + err);
             })
